@@ -16,6 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from apptemplate import views
+
 urlpatterns = [
+    url(r'^$', views.index, name='index'),
+    url(r'^template/', views.template, name='template'),
+# With parametter
+#    url(r'^template/(?P<id>\d+)/', views.template, name='template'),
     url(r'^admin/', admin.site.urls),
 ]
